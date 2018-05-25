@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEshoTable extends Migration
+class Eshos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateEshoTable extends Migration
      */
     public function up()
     {
-        Schema::create('esho', function (Blueprint $table) {
+        Schema::create('eshos', function(Blueprint $table){
             $table->increments('id');
+            $table->string('kobe');
+            $table->string('kuthay');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateEshoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('esho');
+         Schema::dropIfExists('eshos');
     }
 }
